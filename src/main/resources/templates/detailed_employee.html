@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+
+</head>
+<body>
+
+<div class="container my-2">
+    <h1>Detailed Lists</h1>
+
+
+    <table border="1" class="table table-stripped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Employee First Name</th>
+            <th>Employee Last Name</th>
+            <th>Employee Email</th>
+            <th> ide jöhet több adat ha van pl telefonszam ilyesmi </th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <tr th:object="${employee}" th:each="employee : ${listEmployees}">
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+        </tr>
+
+
+
+        </tbody>
+    </table>
+
+    <a th:href="@{/}">Back to Employee List</a>
+
+
+</div>
+
+
+</body>
+</html>

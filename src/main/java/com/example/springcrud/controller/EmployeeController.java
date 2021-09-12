@@ -50,6 +50,13 @@ public class EmployeeController {
         return "update_employee";
     }
 
+    @GetMapping("/showFormForDetailed/{id}")
+    public String showFormForDetailed(@PathVariable (value = "id") long id, Model model){
+
+        model.addAttribute("listEmployees", employeeService.getAllEmployees());
+        return "detailed_employee";
+    }
+
     @GetMapping("/deleteEmployee/{id}")
     public String deleteEmployee(@PathVariable (value = "id") long id){
         //call delete employee method from service
